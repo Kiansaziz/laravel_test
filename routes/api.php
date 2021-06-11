@@ -17,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/testing/{mytest}', [App\Http\Controllers\Api\UserController::class, 'index']);
+
+
+
+Route::group(['as' => 'user.', 'prefix' => '/user'], function () {
+  Route::get('/', [App\Http\Controllers\Api\UserController::class, 'index'])->name('index');
+  Route::post('/', [App\Http\Controllers\Api\UserController::class, 'store'])->name('store');
+  Route::get('/{id}', [App\Http\Controllers\Api\UserController::class, 'find'])->name('find');
+  Route::put('/{id}', [App\Http\Controllers\Api\UserController::class, 'update'])->name('update');
+  Route::delete('/{id}', [App\Http\Controllers\Api\UserController::class, 'delete'])->name('delete');
+
+});
