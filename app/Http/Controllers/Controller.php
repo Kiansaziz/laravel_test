@@ -14,10 +14,10 @@ use Illuminate\Routing\Controller as BaseController;
  *     host=L5_SWAGGER_CONST_HOST,
  *     @OA\Info(
  *         version="1.0.0",
- *         title="L5 Swagger API",
- *         description="L5 Swagger API description",
+ *         title="Kians Azizatikarna API",
+ *         description="Kians Azizatikarna Create API description",
  *         @OA\Contact(
- *             email="your-email@domain.com"
+ *             email="mail.kiansaziz@gmail.com"
  *         ),
  *     )
  * )

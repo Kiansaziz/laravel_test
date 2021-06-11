@@ -1,10 +1,10 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "L5 Swagger API",
-        "description": "L5 Swagger API description",
+        "title": "Kians Azizatikarna API",
+        "description": "Kians Azizatikarna Create API description",
         "contact": {
-            "email": "your-email@domain.com"
+            "email": "mail.kiansaziz@gmail.com"
         },
         "version": "1.0.0"
     },

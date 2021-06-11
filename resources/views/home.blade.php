@@ -15,6 +15,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <br>
+                    <br>
+                    <a href="{{url('api/documentation')}}" class="btn btn-success">Use API Swagger / Documentation </a>
                 </div>
             </div>
         </div>
