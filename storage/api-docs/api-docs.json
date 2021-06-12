@@ -9,6 +9,32 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/api/social_media/google": {
+            "get": {
+                "tags": [
+                    "Login Social Media"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\SocialController::google",
+                "responses": {
+                    "200": {
+                        "description": "Login By Google."
+                    }
+                }
+            }
+        },
+        "/api/social_media/facebook": {
+            "get": {
+                "tags": [
+                    "Login Social Media"
+                ],
+                "operationId": "App\\Http\\Controllers\\Api\\SocialController::facebook",
+                "responses": {
+                    "200": {
+                        "description": "Login By Facebook."
+                    }
+                }
+            }
+        },
         "/api/user": {
             "get": {
                 "tags": [

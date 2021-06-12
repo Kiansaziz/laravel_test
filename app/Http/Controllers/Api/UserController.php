@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -21,7 +22,8 @@ class UserController extends Controller
     public function index()
     {
       $data = User::all();
-      return response()->json($data);
+
+      return response()->json([$data]);
     }
 
     /**
