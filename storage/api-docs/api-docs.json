@@ -15,6 +15,16 @@
                     "Login Social Media"
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\SocialController::google",
+                "parameters": [
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Login By Google."
@@ -28,6 +38,16 @@
                     "Login Social Media"
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\SocialController::facebook",
+                "parameters": [
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Login By Facebook."
@@ -41,6 +61,16 @@
                     "user"
                 ],
                 "operationId": "App\\Http\\Controllers\\Api\\UserController::index",
+                "parameters": [
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Display a listing of users."
@@ -54,6 +84,16 @@
                 "summary": "Store new user",
                 "description": "Returns user data",
                 "operationId": "storeUser",
+                "parameters": [
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -104,6 +144,14 @@
                         "schema": {
                             "type": "integer"
                         }
+                    },
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "responses": {
@@ -136,6 +184,14 @@
                         "required": true,
                         "schema": {
                             "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],
@@ -189,6 +245,14 @@
                         "required": true,
                         "schema": {
                             "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "app_key",
+                        "in": "header",
+                        "description": "insert app key",
+                        "schema": {
+                            "type": "string"
                         }
                     }
                 ],

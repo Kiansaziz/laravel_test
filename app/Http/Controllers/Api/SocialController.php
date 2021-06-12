@@ -11,7 +11,15 @@ class SocialController extends Controller
     * @OA\Get(
     *     path="/api/social_media/google",
     *      tags={"Login Social Media"},
-    *     @OA\Response(response="200", description="Login By Google.")
+    *     @OA\Response(response="200", description="Login By Google."),
+    *     @OA\Parameter(
+    *         name="app_key",
+    *         in="header",
+    *         description="insert app key",
+    *         @OA\Schema(
+    *             type="string"
+    *         )
+    *     ),
     * )
     */
     public function google()
@@ -23,7 +31,15 @@ class SocialController extends Controller
     * @OA\Get(
     *     path="/api/social_media/facebook",
     *      tags={"Login Social Media"},
-    *     @OA\Response(response="200", description="Login By Facebook.")
+    *     @OA\Response(response="200", description="Login By Facebook."),
+    *     @OA\Parameter(
+    *         name="app_key",
+    *         in="header",
+    *         description="insert app key",
+    *         @OA\Schema(
+    *             type="string"
+    *         )
+    *     ),
     * )
     */
     public function facebook()

@@ -19,11 +19,11 @@ class AuthKey
     {
 
       // return Auth::user();
-
-      // $token  = $request->header('app_key');
-      // if ($token != '12345') {
-      //   return response()->json(['message' => 'app Key not found test: '.Auth::user()] , 401);
-      // }
+      // return response()->json(Auth::user());
+      $token  = $request->header('app_key');
+      if ($token != '12345') {
+        return response()->json(['message' => 'app Key not found test: '.Auth::user()] , 401);
+      }
       return $next($request);
     }
 }

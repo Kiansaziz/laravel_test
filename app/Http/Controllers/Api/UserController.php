@@ -15,7 +15,15 @@ class UserController extends Controller
     * @OA\Get(
     *     path="/api/user",
     *      tags={"user"},
-    *     @OA\Response(response="200", description="Display a listing of users.")
+    *     @OA\Response(response="200", description="Display a listing of users."),
+    *     @OA\Parameter(
+     *         name="app_key",
+     *         in="header",
+     *         description="insert app key",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
     * )
     */
 
@@ -23,7 +31,7 @@ class UserController extends Controller
     {
       $data = User::all();
 
-      return response()->json([$data]);
+      return response()->json($data);
     }
 
     /**
@@ -53,14 +61,22 @@ class UserController extends Controller
      *      @OA\Response(
      *          response=403,
      *          description="Forbidden"
-     *      )
+     *      ),
+     *     @OA\Parameter(
+     *         name="app_key",
+     *         in="header",
+     *         description="insert app key",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
      * )
      */
     public function store(Request $request)
     {
       try {
         $create = User::create($request->all());
-        return response()->json([$create , 'status' => 500]);
+        return response()->json(['data' => $create , 'status' => 500]);
       } catch (\Exception $e) {
         return response()->json(['message' => $e->getMessage() ,'status' => 500]);
       }
@@ -97,7 +113,15 @@ class UserController extends Controller
      *      @OA\Response(
      *          response=403,
      *          description="Forbidden"
-     *      )
+     *      ),
+     *     @OA\Parameter(
+     *         name="app_key",
+     *         in="header",
+     *         description="insert app key",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
      * )
      */
 
@@ -105,7 +129,7 @@ class UserController extends Controller
     {
       $data = User::find($id);
       if ($data != null) {
-        return response()->json([$data , 'status' => 200]);
+        return response()->json(['data' => $data , 'status' => 200]);
       }
       return response()->json(['message' => 'Data Not Found !' ,'status' => 500]);
     }
@@ -151,7 +175,15 @@ class UserController extends Controller
     *      @OA\Response(
     *          response=404,
     *          description="Resource Not Found"
-    *      )
+    *      ),
+    *     @OA\Parameter(
+    *         name="app_key",
+    *         in="header",
+    *         description="insert app key",
+    *         @OA\Schema(
+    *             type="string"
+    *         )
+    *     ),
     * )
     */
 
@@ -160,7 +192,7 @@ class UserController extends Controller
       $data = User::find($id);
       if ($data != null) {
         $data->update($request->all());
-        return response()->json([$data , 'status' => 200]);
+        return response()->json(['data' => $data , 'status' => 200]);
       }
       return response()->json(['message' => 'Data Not Found !' ,'status' => 500]);
     }
@@ -196,7 +228,15 @@ class UserController extends Controller
      *      @OA\Response(
      *          response=403,
      *          description="Forbidden"
-     *      )
+     *      ),
+     *     @OA\Parameter(
+     *         name="app_key",
+     *         in="header",
+     *         description="insert app key",
+     *         @OA\Schema(
+     *             type="string"
+     *         )
+     *     ),
      * )
      */
     public function delete($id)
